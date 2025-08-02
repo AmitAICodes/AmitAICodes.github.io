@@ -1,98 +1,521 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="en">
 <head>
-<title>Page 1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amit Kumar - Test Specialist Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<style type="text/css">
-<!--
-	p {margin: 0; padding: 0;}	.ft00{font-size:35px;font-family:Ubuntu;color:#000000;}
-	.ft01{font-size:18px;font-family:Ubuntu;color:#313c4e;}
-	.ft02{font-size:13px;font-family:Ubuntu;color:#000000;}
-	.ft03{font-size:21px;font-family:Ubuntu;color:#000000;}
-	.ft04{font-size:18px;font-family:Ubuntu;color:#000000;}
-	.ft05{font-size:18px;font-family:Ubuntu;color:#000000;}
-	.ft06{font-size:12px;font-family:Ubuntu;color:#313c4e;}
-	.ft07{font-size:12px;font-family:Ubuntu;color:#000000;opacity:0.000000;}
-	.ft08{font-size:13px;font-family:Ubuntu;color:#000000;}
-	.ft09{font-size:15px;font-family:Ubuntu;color:#000000;}
-	.ft010{font-size:13px;font-family:Ubuntu;color:#ffffff;}
-	.ft011{font-size:12px;font-family:Ubuntu;color:#7c7c7c;}
-	.ft012{font-size:13px;line-height:16px;font-family:Ubuntu;color:#000000;}
-	.ft013{font-size:18px;line-height:20px;font-family:Ubuntu;color:#000000;}
-	.ft014{font-size:13px;line-height:22px;font-family:Ubuntu;color:#000000;}
--->
-</style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .profile-info {
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-name {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-title {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+        }
+
+        .content-section {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #764ba2;
+        }
+
+        .summary-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 25px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h4 {
+            color: #667eea;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .skill-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        .experience-item {
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .project-duration {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-role {
+            color: #667eea;
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .responsibilities {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .responsibilities li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .responsibilities li:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .tech-stack {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .tech-stack strong {
+            color: #2c3e50;
+        }
+
+        .education-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .education-degree {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .education-school {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .profile-name {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
-<body bgcolor="#A0A0A0" vlink="blue" link="blue">
-<div id="page1-div" style="position:relative;width:892px;height:1263px;">
-<img width="892" height="1263" src="Latest Resume001.png" alt="background image"/>
-<p style="position:absolute;top:39px;left:181px;white-space:nowrap" class="ft00">Amit&#160;Kumar</p>
-<p style="position:absolute;top:80px;left:183px;white-space:nowrap" class="ft01">Senior&#160;Technical&#160;Lead</p>
-<p style="position:absolute;top:35px;left:685px;white-space:nowrap" class="ft02"><a href="mailto:amit.crashh@gmail.com">amit.crashh@gmail.com</a></p>
-<p style="position:absolute;top:65px;left:754px;white-space:nowrap" class="ft02">9650975315</p>
-<p style="position:absolute;top:94px;left:758px;white-space:nowrap" class="ft02">Noida,&#160;India</p>
-<p style="position:absolute;top:124px;left:745px;white-space:nowrap" class="ft02">25&#160;June,&#160;1988</p>
-<p style="position:absolute;top:170px;left:37px;white-space:nowrap" class="ft012">Eleven&#160;years&#160;of&#160;experience&#160;in&#160;Automation&#160;and&#160;Project&#160;management&#160;with&#160;end&#160;to&#160;end&#160;Frontend/Backend&#160;framework&#160;development&#160;and<br/>managing&#160;skills&#160;as&#160;Module&#160;Scrum&#160;Master</p>
-<p style="position:absolute;top:218px;left:37px;white-space:nowrap" class="ft03"><b>WORK&#160;EXPERIENCE</b></p>
-<p style="position:absolute;top:256px;left:51px;white-space:nowrap" class="ft013"><b>Deutsche&#160;Bank:&#160;(Check&#160;clearing&#160;System-&#160;iClear&#160;Inward)<br/></b>HCL</p>
-<p style="position:absolute;top:302px;left:51px;white-space:nowrap" class="ft06"><i>05/2020&#160;-&#160;Present</i></p>
-<p style="position:absolute;top:302px;left:145px;white-space:nowrap" class="ft07">,&#160;</p>
-<p style="position:absolute;top:302px;left:495px;white-space:nowrap" class="ft06"><i>Noida</i></p>
-<p style="position:absolute;top:335px;left:74px;white-space:nowrap" class="ft012">Successfully&#160;developed&#160;and&#160;established&#160;a&#160;centralised&#160;functional/Backend<br/>test&#160;automation&#160;framework.<br/>Responsible&#160;for&#160;designing,&#160;developing,&#160;maintaining&#160;and&#160;managing<br/>regression/Sanity&#160;automated&#160;test&#160;suite.<br/>Responsible&#160;for&#160;communicating&#160;with&#160;Product&#160;Managers&#160;,Business&#160;Users<br/>and&#160;the&#160;Development&#160;Teams&#160;in&#160;identifying&#160;the&#160;testing&#160;needs&#160;and<br/>prioritized&#160;the&#160;tasks&#160;as&#160;per&#160;the&#160;business&#160;needs.<br/>Responsible&#160;for&#160;communicating&#160;Test&#160;Metrics,&#160;Regression&#160;Metrics,&#160;QA<br/>concerns&#160;and&#160;project&#160;status&#160;to&#160;higher&#160;management&#160;and&#160;key&#160;stakeholders<br/>on&#160;a&#160;regular&#160;schedule.<br/>Responsible&#160;for&#160;the&#160;backlog&#160;grooming,&#160;sprint&#160;planning,&#160;organising&#160;daily<br/>status&#160;meetings&#160;and&#160;retrospective&#160;meetings&#160;after&#160;every&#160;sprint&#160;to<br/>understand&#160;the&#160;challenges&#160;during&#160;the&#160;sprint.<br/><b>Tools&#160;Used</b>&#160;–&#160;Selenium,&#160;Rest&#160;assured,&#160;Maven,&#160;Bitbucket,&#160;Jenkins&#160;with<br/>Java&#160;language.</p>
-<p style="position:absolute;top:631px;left:51px;white-space:nowrap" class="ft013"><b>Deutsche&#160;Bank&#160;(GIS):&#160;(Check&#160;issuance&#160;System)<br/></b>HCL</p>
-<p style="position:absolute;top:677px;left:51px;white-space:nowrap" class="ft06"><i>02/2019&#160;-&#160;04/2020</i></p>
-<p style="position:absolute;top:677px;left:150px;white-space:nowrap" class="ft07">,&#160;</p>
-<p style="position:absolute;top:677px;left:495px;white-space:nowrap" class="ft06"><i>Noida</i></p>
-<p style="position:absolute;top:709px;left:74px;white-space:nowrap" class="ft012">Successfully&#160;developed&#160;and&#160;established&#160;a&#160;centralised&#160;functional/Backend<br/>test&#160;automation&#160;framework.<br/>Responsible&#160;for&#160;designing,&#160;developing,&#160;maintaining&#160;and&#160;managing<br/>regression/Sanity&#160;automated&#160;test&#160;suite.<br/>Responsible&#160;for&#160;communicating&#160;with&#160;Product&#160;Managers&#160;,Business&#160;Users<br/>and&#160;the&#160;Development&#160;Teams&#160;in&#160;identifying&#160;the&#160;testing&#160;needs&#160;and<br/>prioritized&#160;the&#160;tasks&#160;as&#160;per&#160;the&#160;business&#160;needs.<br/>Responsible&#160;for&#160;communicating&#160;Test&#160;Metrics,&#160;Regression&#160;Metrics,&#160;QA<br/>concerns&#160;and&#160;project&#160;status&#160;to&#160;higher&#160;management&#160;and&#160;key&#160;stakeholders<br/>on&#160;a&#160;regular&#160;schedule.<br/>Responsible&#160;for&#160;the&#160;backlog&#160;grooming,&#160;sprint&#160;planning,&#160;organising&#160;daily<br/>status&#160;meetings&#160;and&#160;retrospective&#160;meetings&#160;after&#160;every&#160;sprint&#160;to<br/>understand&#160;the&#160;challenges&#160;during&#160;the&#160;sprint.<br/><b>Tools&#160;Used</b>&#160;–&#160;Selenium,&#160;Rest&#160;assured,&#160;Maven,&#160;Bitbucket,&#160;Jenkins&#160;with<br/>Java&#160;language.</p>
-<p style="position:absolute;top:1024px;left:37px;white-space:nowrap" class="ft03"><b>CERTIFICATES</b></p>
-<p style="position:absolute;top:1063px;left:37px;white-space:nowrap" class="ft09">ISTQB&#160;foundation&#160;level&#160;(05/2010&#160;-&#160;05/2010)</p>
-<p style="position:absolute;top:1113px;left:37px;white-space:nowrap" class="ft03"><b>EDUCATION</b></p>
-<p style="position:absolute;top:1151px;left:51px;white-space:nowrap" class="ft013"><b>B&#160;Tech&#160;-&#160;IT<br/></b>MIET&#160;Meerut</p>
-<p style="position:absolute;top:1198px;left:51px;white-space:nowrap" class="ft06"><i>08/2005&#160;-&#160;08/2009</i></p>
-<p style="position:absolute;top:1198px;left:150px;white-space:nowrap" class="ft07">,&#160;</p>
-<p style="position:absolute;top:1198px;left:459px;white-space:nowrap" class="ft06"><i>Meerut,&#160;69%</i></p>
-<p style="position:absolute;top:218px;left:589px;white-space:nowrap" class="ft03"><b>SKILLS</b></p>
-<p style="position:absolute;top:265px;left:599px;white-space:nowrap" class="ft010">Selenium&#160;WebDriver</p>
-<p style="position:absolute;top:265px;left:750px;white-space:nowrap" class="ft010">Rest&#160;assured</p>
-<p style="position:absolute;top:297px;left:599px;white-space:nowrap" class="ft010">Java</p>
-<p style="position:absolute;top:297px;left:654px;white-space:nowrap" class="ft010">testNG/Junit</p>
-<p style="position:absolute;top:297px;left:760px;white-space:nowrap" class="ft010">Jira</p>
-<p style="position:absolute;top:330px;left:599px;white-space:nowrap" class="ft010">Maven</p>
-<p style="position:absolute;top:330px;left:667px;white-space:nowrap" class="ft010">Jenkins</p>
-<p style="position:absolute;top:330px;left:740px;white-space:nowrap" class="ft010">Sauce&#160;Lab</p>
-<p style="position:absolute;top:362px;left:599px;white-space:nowrap" class="ft010">Bitbucket</p>
-<p style="position:absolute;top:362px;left:686px;white-space:nowrap" class="ft010">SQL</p>
-<p style="position:absolute;top:395px;left:599px;white-space:nowrap" class="ft010">Test-complete&#160;11/12</p>
-<p style="position:absolute;top:427px;left:599px;white-space:nowrap" class="ft010">Test&#160;Execute&#160;11/12</p>
-<p style="position:absolute;top:460px;left:599px;white-space:nowrap" class="ft010">Jira&#160;Administrator</p>
-<p style="position:absolute;top:460px;left:737px;white-space:nowrap" class="ft010">Sprint&#160;Planning</p>
-<p style="position:absolute;top:492px;left:599px;white-space:nowrap" class="ft010">Project&#160;Management</p>
-<p style="position:absolute;top:551px;left:589px;white-space:nowrap" class="ft03"><b>ORGANIZATIONS</b></p>
-<p style="position:absolute;top:590px;left:589px;white-space:nowrap" class="ft09">HCL&#160;(02/2019&#160;-&#160;Present)</p>
-<p style="position:absolute;top:608px;left:589px;white-space:nowrap" class="ft011"><i>Senior&#160;Technical&#160;Lead</i></p>
-<p style="position:absolute;top:634px;left:589px;white-space:nowrap" class="ft09">Outworx&#160;(01/2018&#160;-&#160;01/2019)</p>
-<p style="position:absolute;top:652px;left:589px;white-space:nowrap" class="ft011"><i>QA&#160;Lead</i></p>
-<p style="position:absolute;top:678px;left:589px;white-space:nowrap" class="ft09">Techizen&#160;india&#160;(07/2012&#160;-&#160;12/2017)</p>
-<p style="position:absolute;top:696px;left:589px;white-space:nowrap" class="ft011"><i>QA&#160;Team&#160;Lead</i></p>
-<p style="position:absolute;top:722px;left:589px;white-space:nowrap" class="ft09">QA&#160;Infotech&#160;(03/2010&#160;-&#160;07/2012)</p>
-<p style="position:absolute;top:740px;left:589px;white-space:nowrap" class="ft011"><i>Senior&#160;Software&#160;Engineer</i></p>
-<p style="position:absolute;top:785px;left:589px;white-space:nowrap" class="ft03"><b>HONOR&#160;AWARDS</b></p>
-<p style="position:absolute;top:824px;left:589px;white-space:nowrap" class="ft09">Pilot&#160;Aptitude&#160;Battery&#160;Test</p>
-<p style="position:absolute;top:841px;left:589px;white-space:nowrap" class="ft09">&#160;(11/2009&#160;-&#160;12/2009)</p>
-<p style="position:absolute;top:859px;left:589px;white-space:nowrap" class="ft011"><i>Air&#160;Force&#160;India</i></p>
-<p style="position:absolute;top:905px;left:589px;white-space:nowrap" class="ft03"><b>LANGUAGES</b></p>
-<p style="position:absolute;top:945px;left:589px;white-space:nowrap" class="ft02">English</p>
-<p style="position:absolute;top:962px;left:589px;white-space:nowrap" class="ft06"><i>Full&#160;Professional&#160;Proﬁciency</i></p>
-<p style="position:absolute;top:988px;left:589px;white-space:nowrap" class="ft02">Hindi</p>
-<p style="position:absolute;top:1005px;left:589px;white-space:nowrap" class="ft06"><i>Native&#160;or&#160;Bilingual&#160;Proﬁciency</i></p>
-<p style="position:absolute;top:1050px;left:589px;white-space:nowrap" class="ft03"><b>INTERESTS</b></p>
-<p style="position:absolute;top:1099px;left:601px;white-space:nowrap" class="ft02">Reading</p>
-<p style="position:absolute;top:1099px;left:680px;white-space:nowrap" class="ft02">Music</p>
-<p style="position:absolute;top:1099px;left:746px;white-space:nowrap" class="ft02">Cricket</p>
-<p style="position:absolute;top:1134px;left:601px;white-space:nowrap" class="ft02">Swimming</p>
-<p style="position:absolute;top:320px;left:75px;white-space:nowrap" class="ft06"><i>Achievements/Tasks</i></p>
-<p style="position:absolute;top:694px;left:75px;white-space:nowrap" class="ft06"><i>Achievements/Tasks</i></p>
-</div>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="profile-info">
+                    <h1 class="profile-name">AMIT KUMAR</h1>
+                    <h2 class="profile-title">Test Specialist</h2>
+                    <p style="font-size: 1.1rem; margin: 20px 0; opacity: 0.9;">
+                        10+ years of experience in Testing & Automation across Banking, Mortgage, and eCommerce domains
+                    </p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Greater Noida</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>9650975315</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>AMIT.49.KUMAR@coforgetech.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Section -->
+            <div class="content-section">
+                <!-- Profile Summary -->
+                <section class="section fade-in">
+                    <h3 class="section-title">Profile Summary</h3>
+                    <div class="summary-text">
+                        Test Specialist with 10+ years of experience on variety of testing methods like Agile, Scrum, Sprint and Kanban Method. 
+                        Excellent knowledge of Banking, Mortgage, eCommerce Domains, Automation and Project management with end to end 
+                        Frontend/Backend framework development and managing skills as Module Scrum Master. Currently working on tools such as 
+                        Rest Assured, Selenium, Swagger, Postman, JIRA, for banking domain.
+                    </div>
+                </section>
+
+                <!-- Skills -->
+                <section class="section fade-in">
+                    <h3 class="section-title">Technical Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4><i class="fas fa-code"></i> Technologies</h4>
+                            <ul class="skill-list">
+                                <li>REST API & API Automation</li>
+                                <li>Selenium WebDriver</li>
+                                <li>Regression Testing</li>
+                                <li>Performance Testing</li>
+                                <li>Java (10+ years)</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4><i class="fas fa-tools"></i> Tools & Frameworks</h4>
+                            <ul class="skill-list">
+                                <li>Rest Assured</li>
+                                <li>Postman & Swagger</li>
+                                <li>Selenium & JMeter</li>
+                                <li>Kibana & JIRA</li>
+                                <li>Maven & Jenkins</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4><i class="fas fa-university"></i> Domain Expertise</h4>
+                            <ul class="skill-list">
+                                <li>Banking & Financial Services</li>
+                                <li>Mortgage Systems</li>
+                                <li>eCommerce Platforms</li>
+                                <li>Check Clearing Systems</li>
+                                <li>eLearning Platforms</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4><i class="fas fa-tasks"></i> Methodologies</h4>
+                            <ul class="skill-list">
+                                <li>Agile & Scrum</li>
+                                <li>Sprint Planning</li>
+                                <li>Kanban Method</li>
+                                <li>Test Automation</li>
+                                <li>Module Leadership</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Professional Experience -->
+                <section class="section fade-in">
+                    <h3 class="section-title">Professional Experience</h3>
+                    
+                    <!-- Current Role -->
+                    <div class="experience-item">
+                        <div class="project-header">
+                            <div>
+                                <h4 class="project-name">Test Specialist</h4>
+                                <p class="project-role">Current Role</p>
+                            </div>
+                            <div class="project-duration">May 2022 - Present</div>
+                        </div>
+                        <ul class="responsibilities">
+                            <li>Automating APIs with Rest Assured</li>
+                            <li>End to End Functional Testing for various Projects & Applications</li>
+                            <li>Requirement Gathering & Analysis, Test Design, Test Strategy & Plan</li>
+                            <li>Delivery to stakeholders/clients and providing project demos</li>
+                            <li>Regression, Integration, Functional, Sanity testing, cross browser testing</li>
+                            <li>Bug reporting and coordinating with development/product team</li>
+                        </ul>
+                    </div>
+
+                    <!-- Deutsche Bank Projects -->
+                    <div class="experience-item">
+                        <div class="project-header">
+                            <div>
+                                <h4 class="project-name">Deutsche Bank - Check Clearing System (iClear Inward)</h4>
+                                <p class="project-role">Senior Technical Lead</p>
+                            </div>
+                            <div class="project-duration">Feb 2019 - May 2022</div>
+                        </div>
+                        <p class="project-description">
+                            iClear inward is responsible for end-to-end check clearing systems which were issued to Deutsche bank by other banks.
+                        </p>
+                        <ul class="responsibilities">
+                            <li>Successfully developed and established a centralised functional/Backend test automation framework</li>
+                            <li>Responsible for designing, developing, maintaining and managing regression/Sanity automated test suite</li>
+                            <li>Communicating with Product Managers, Business Users and Development Teams</li>
+                            <li>Responsible for Test Metrics, Regression Metrics, and project status reporting</li>
+                            <li>Backlog grooming, sprint planning, organising daily status meetings and retrospectives</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <strong>Tools Used:</strong> Selenium, Rest Assured, Maven, Bitbucket, Jenkins with Java
+                        </div>
+                    </div>
+
+                    <!-- Trulia Zillow Project -->
+                    <div class="experience-item">
+                        <div class="project-header">
+                            <div>
+                                <h4 class="project-name">Trulia Zillow Group</h4>
+                                <p class="project-role">QA Lead</p>
+                            </div>
+                            <div class="project-duration">Jan 2019 - Jan 2020</div>
+                        </div>
+                        <p class="project-description">
+                            American online real estate marketplace facilitating buyers and renters to find homes across the United States.
+                        </p>
+                        <ul class="responsibilities">
+                            <li>Frameworks designing for Functional and Regression automation suites</li>
+                            <li>Maintaining existing test suites and running regression suits for every cycle</li>
+                            <li>Managing deliverables of the Automation team from offshore</li>
+                            <li>Daily communication with Client over slack and VOIP</li>
+                            <li>Attending daily and weekly Sprint meetings with onshore project team</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section class="section fade-in">
+                    <h3 class="section-title">Education</h3>
+                    <div class="education-item">
+                        <div class="education-degree">B.Tech in Information Technology</div>
+                        <div class="education-school">MIET, Meerut - 2009</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add smooth scrolling and initial animation
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.fade-in').forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('visible');
+                }, index * 200);
+            });
+        });
+    </script>
 </body>
 </html>
