@@ -13,6 +13,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: #0f172a;
@@ -53,6 +57,12 @@
             display: flex;
             list-style: none;
             gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu li {
+            list-style: none;
         }
 
         .nav-menu a {
@@ -63,10 +73,7 @@
             position: relative;
         }
 
-        .nav-menu a:hover {
-            color: #f8fafc;
-        }
-
+        .nav-menu a:hover,
         .nav-menu a.active {
             color: #f8fafc;
         }
@@ -87,7 +94,6 @@
             color: #0f172a;
         }
 
-        /* Mobile Navigation */
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -145,4 +151,643 @@
             color: #cbd5e1;
             max-width: 600px;
             margin: 0 auto;
-            line
+            line-height: 1.7;
+        }
+
+        /* Section Cards */
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* About Section */
+        .about-content {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+
+        .skill-icon i {
+            font-size: 1.5rem;
+            color: #3b82f6;
+        }
+
+        .skill-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #f8fafc;
+            margin-bottom: 10px;
+        }
+
+        .skill-list {
+            list-style: none;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skill-list li {
+            margin: 5px 0;
+            padding: 0;
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+        }
+
+        .experience-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .exp-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #f8fafc;
+            margin-bottom: 5px;
+        }
+
+        .exp-company {
+            color: #3b82f6;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .exp-duration {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .exp-description {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .exp-responsibilities {
+            list-style: none;
+            color: #94a3b8;
+            padding: 0;
+            margin: 0;
+        }
+
+        .exp-responsibilities li {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .exp-responsibilities li:before {
+            content: "▶";
+            color: #3b82f6;
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+        }
+
+        /* Projects Section */
+        .project-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #f8fafc;
+            margin-bottom: 10px;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .project-tag {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 60px;
+            color: #94a3b8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(15, 23, 42, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                gap: 15px;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-container {
+                padding: 0 20px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .container {
+                padding: 100px 20px 60px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .exp-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-image {
+                width: 150px;
+                height: 150px;
+                font-size: 3rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .nav-container {
+                padding: 0 15px;
+            }
+
+            .container {
+                padding: 100px 15px 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">AK</div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+            <a href="#" class="resume-btn">Resume</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="profile-image">
+                <i class="fas fa-user"></i>
+            </div>
+            <h1 class="hero-title">Amit Kumar</h1>
+            <h2 class="hero-subtitle">Test Specialist</h2>
+            <p class="hero-description">
+                Test Specialist with 10+ years of experience on variety of testing methods like Agile, Scrum, Sprint and Kanban Method. 
+                Excellent knowledge of Banking, Mortgage, eCommerce Domains, Automation and Project management with end to end Frontend/Backend framework development.
+            </p>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>
+                    I am an experienced Test Specialist with over 10 years of expertise in software quality assurance, 
+                    test automation, and comprehensive testing methodologies. My experience spans across Banking, 
+                    Mortgage, eCommerce, and eLearning domains.
+                </p>
+                <br>
+                <p>
+                    Currently working on tools such as Rest Assured, Selenium, Swagger, Postman, and JIRA for banking domain projects. 
+                    I excel in managing end-to-end testing frameworks and serving as Module Scrum Master, 
+                    ensuring high-quality software delivery through rigorous testing practices.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2 class="section-title">Technical Proficiency</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="skill-title">Testing Technologies</h3>
+                    <ul class="skill-list">
+                        <li>REST API Testing</li>
+                        <li>API Automation</li>
+                        <li>Selenium Automation</li>
+                        <li>Regression Testing</li>
+                        <li>Performance Testing</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="skill-title">Testing Tools</h3>
+                    <ul class="skill-list">
+                        <li>Postman</li>
+                        <li>Swagger</li>
+                        <li>Rest Assured</li>
+                        <li>Selenium</li>
+                        <li>JMeter</li>
+                        <li>Kibana</li>
+                        <li>JIRA</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3 class="skill-title">Domain Expertise</h3>
+                    <ul class="skill-list">
+                        <li>Banking Systems</li>
+                        <li>Check Clearing Systems</li>
+                        <li>iClearing & Check Issuance</li>
+                        <li>Mortgage Systems</li>
+                        <li>eCommerce Platforms</li>
+                        <li>eLearning Applications</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="skill-title">Methodologies & Leadership</h3>
+                    <ul class="skill-list">
+                        <li>Agile & Scrum</li>
+                        <li>Sprint Planning</li>
+                        <li>Kanban Method</li>
+                        <li>Module Scrum Master</li>
+                        <li>Project Management</li>
+                        <li>Team Leadership</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-timeline">
+                
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <h3 class="exp-title">Test Specialist</h3>
+                            <p class="exp-company">Current Role</p>
+                        </div>
+                        <span class="exp-duration">May 2022 - Present</span>
+                    </div>
+                    <p class="exp-description">
+                        Leading comprehensive testing initiatives with expertise in API automation and end-to-end testing frameworks.
+                    </p>
+                    <ul class="exp-responsibilities">
+                        <li>Automating APIs with Rest Assured for banking domain applications</li>
+                        <li>End to End Functional Testing for various Projects & Applications</li>
+                        <li>Requirement Gathering & Analysis, Test Design, Test Strategy & Planning</li>
+                        <li>Test Execution to Monitoring and Delivery to stakeholders/clients</li>
+                        <li>Providing project demos to stakeholders and clients</li>
+                        <li>Regression, Integration, Functional, Sanity testing, cross browser testing</li>
+                        <li>Bug reporting and coordinating with development/product teams</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <h3 class="exp-title">QA Lead</h3>
+                            <p class="exp-company">Outworx Pvt Ltd</p>
+                        </div>
+                        <span class="exp-duration">Jan 2019 - Jan 2020</span>
+                    </div>
+                    <p class="exp-description">
+                        Led automation testing initiatives for Trulia Zillow Group, a major American online real estate marketplace.
+                    </p>
+                    <ul class="exp-responsibilities">
+                        <li>Frameworks designing for Functional and Regression automation suites</li>
+                        <li>Maintaining existing test suites and running regression suits for every cycle</li>
+                        <li>Responsible for deliverables of Automation team from offshore</li>
+                        <li>Daily communication with Client over slack and VOIP</li>
+                        <li>Attending daily and weekly Sprint meetings with onshore project team</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <h3 class="exp-title">QA Lead</h3>
+                            <p class="exp-company">Techizen India</p>
+                        </div>
+                        <span class="exp-duration">Jul 2012 - Dec 2017</span>
+                    </div>
+                    <p class="exp-description">
+                        Led testing operations for Lexia Rosetta Stone, focusing on eLearning platforms and educational technology solutions.
+                    </p>
+                    <ul class="exp-responsibilities">
+                        <li>Framework designing for Functional and Regression automation suites</li>
+                        <li>Selenium and TestComplete automation implementation</li>
+                        <li>Managing offshore automation team deliverables</li>
+                        <li>Client communication and sprint planning coordination</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <h3 class="exp-title">Software Engineer</h3>
+                            <p class="exp-company">QA Infotech Pvt Ltd</p>
+                        </div>
+                        <span class="exp-duration">Jul 2010 - Dec 2012</span>
+                    </div>
+                    <p class="exp-description">
+                        Started career focusing on eLearning domain testing with Cengage Learning, implementing 508 compliance testing.
+                    </p>
+                    <ul class="exp-responsibilities">
+                        <li>Framework updates for Functional and Regression Automation suites</li>
+                        <li>Selenium automation testing implementation</li>
+                        <li>Offshore team coordination and deliverable management</li>
+                        <li>Client communication and agile methodology participation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Major Projects Section -->
+        <section id="projects" class="section">
+            <h2 class="section-title">Major Projects</h2>
+            
+            <div class="project-item">
+                <h3 class="project-title">Deutsche Bank - Check Clearing System (iClear Inward)</h3>
+                <div class="project-meta">
+                    <span class="project-tag">Banking</span>
+                    <span class="project-tag">Feb 2019 - May 2022</span>
+                    <span class="project-tag">Senior Technical Lead</span>
+                </div>
+                <p class="exp-description">
+                    End-to-end check clearing system for checks issued to Deutsche Bank by other banks. 
+                    Successfully developed and established centralized functional/backend test automation framework.
+                </p>
+                <ul class="exp-responsibilities">
+                    <li>Designed, developed, and maintained regression/sanity automated test suite</li>
+                    <li>Communicated with Product Managers and Development Teams for testing needs prioritization</li>
+                    <li>Managed test metrics, regression metrics, and project status reporting</li>
+                    <li>Led backlog grooming, sprint planning, and retrospective meetings</li>
+                    <li>Tools: Selenium, Rest Assured, Maven, Bitbucket, Jenkins with Java</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <h3 class="project-title">Deutsche Bank - Check Issuance System (GIS)</h3>
+                <div class="project-meta">
+                    <span class="project-tag">Banking</span>
+                    <span class="project-tag">Feb 2019 - May 2022</span>
+                    <span class="project-tag">Senior Technical Lead</span>
+                </div>
+                <p class="exp-description">
+                    End-to-end check issuance system for all regions where Deutsche Bank operates.
+                    Implemented comprehensive automation frameworks for functional and backend testing.
+                </p>
+            </div>
+
+            <div class="project-item">
+                <h3 class="project-title">Trulia Zillow Group</h3>
+                <div class="project-meta">
+                    <span class="project-tag">eCommerce</span>
+                    <span class="project-tag">Jan 2019 - Jan 2020</span>
+                    <span class="project-tag">QA Lead</span>
+                </div>
+                <p class="exp-description">
+                    American online real estate marketplace facilitating home buying and renting across the United States 
+                    with neighborhood insights, crime data, schools, and business information.
+                </p>
+            </div>
+
+            <div class="project-item">
+                <h3 class="project-title">Lexia Reading Core5</h3>
+                <div class="project-meta">
+                    <span class="project-tag">eLearning</span>
+                    <span class="project-tag">Jul 2012 - Dec 2017</span>
+                    <span class="project-tag">QA Lead</span>
+                </div>
+                <p class="exp-description">
+                    Personalized learning platform for fundamental literacy skills for students in grades pre-K–5, 
+                    delivering real-time performance data through MyLexia backend system.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Amit Kumar. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        if (mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                }
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    if (navMenu) {
+                        navMenu.classList.remove('active');
+                    }
+                    if (mobileMenuBtn) {
+                        const icon = mobileMenuBtn.querySelector('i');
+                        if (icon) {
+                            icon.classList.add('fa-bars');
+                            icon.classList.remove('fa-times');
+                        }
+                    }
+                }
+            });
+        });
+
+        // Update active navigation link on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-menu a');
+
+            let currentSection = '';
+            sections.forEach(function(section) {
+                const sectionTop = section.offsetTop - 100;
+                if (window.pageYOffset >= sectionTop) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(function(link) {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
