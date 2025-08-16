@@ -302,15 +302,110 @@
             margin-top: 60px;
             color: #94a3b8;
         }
-        @media print {
-            .header, .footer, .resume-btn, .mobile-menu-btn, .nav-menu { display: none !important; }
-            body { background: #fff !important; color: #000 !important; }
-            .container, .section {
-                background: #fff !important;
-                color: #000 !important;
-                box-shadow: none !important;
-                border: none !important;
+        
+        /* Enhanced PDF-specific styles for better visibility */
+        @media print, (max-width: 0) {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                print-color-adjust: exact !important;
             }
+            .header, .footer, .resume-btn, .mobile-menu-btn, .nav-menu { 
+                display: none !important; 
+            }
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+            }
+            .container {
+                background: #ffffff !important;
+                color: #000000 !important;
+                padding: 20px !important;
+                max-width: 100% !important;
+            }
+            .section {
+                background: #ffffff !important;
+                color: #000000 !important;
+                border: 1px solid #cccccc !important;
+                box-shadow: none !important;
+                margin-bottom: 20px !important;
+                page-break-inside: avoid;
+            }
+            .hero-title, .section-title, .exp-title, .skill-title, .project-title {
+                color: #000000 !important;
+            }
+            .hero-intro, .about-content, .exp-description, 
+            .exp-responsibilities li, .skill-list li {
+                color: #333333 !important;
+            }
+            .highlight-item {
+                background: #f8f9fa !important;
+                color: #000000 !important;
+                border: 1px solid #cccccc !important;
+            }
+            .highlight-item strong {
+                color: #000000 !important;
+            }
+            .skill-card, .experience-item, .project-item {
+                background: #f8f9fa !important;
+                color: #000000 !important;
+                border: 1px solid #cccccc !important;
+            }
+            .profile-image {
+                border: 2px solid #cccccc !important;
+                background: #ffffff !important;
+            }
+            .profile-image img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            .exp-company, .skill-icon i {
+                color: #0066cc !important;
+            }
+            .project-tag, .exp-duration {
+                background: #e6f3ff !important;
+                color: #0066cc !important;
+                border: 1px solid #cce6ff !important;
+            }
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .mobile-menu-btn { display: block; }
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(15,23,42,0.98);
+                flex-direction: column;
+                padding: 20px;
+                border-top: 1px solid rgba(255,255,255,0.1);
+                gap: 15px;
+            }
+            .nav-menu.active { display: flex; }
+            .nav-container { padding: 0 20px; }
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .container { padding: 100px 20px 60px; }
+            .section { padding: 25px; }
+            .exp-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .project-meta { flex-direction: column; gap: 10px; }
+            .hero-description { max-width: 100%; text-align: center; }
+            .hero-intro { font-size: 1rem; }
+            .highlight-item { padding: 15px; font-size: 0.95rem; }
+            .highlight-item strong { font-size: 1rem; }
+        }
+        @media (max-width: 480px) {
+            .profile-image { width: 150px; height: 150px; font-size: 3rem; }
+            .hero-title { font-size: 2rem; }
+            .section-title { font-size: 1.5rem; }
+            .nav-container { padding: 0 15px; }
+            .container { padding: 100px 15px 60px; }
+            .hero-highlights { gap: 15px; }
+            .highlight-item { padding: 12px; font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -659,31 +754,52 @@
                 }
             });
         });
-        // PDF Download Functionality
+        
+        // Enhanced PDF Download Functionality
         function downloadPortfolioPDF() {
             const header = document.querySelector('.header');
             const footer = document.querySelector('.footer');
             const navMenu = document.querySelector('.nav-menu');
+            
             let headerDisplay = header.style.display;
             let footerDisplay = footer.style.display;
             let navDisplay = navMenu.style.display;
+            
             header.style.display = 'none';
             footer.style.display = 'none';
             navMenu.style.display = 'none';
 
             const element = document.querySelector('.container');
+            
             const opt = {
-                margin: 0.2,
+                margin: 0.3,
                 filename: 'Amit_Kumar_Portfolio.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true },
-                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+                image: { 
+                    type: 'jpeg', 
+                    quality: 0.98 
+                },
+                html2canvas: {
+                    scale: 2,
+                    useCORS: true,
+                    scrollY: 0,
+                    letterRendering: true,
+                    allowTaint: true,
+                    backgroundColor: '#ffffff'
+                },
+                jsPDF: { 
+                    unit: 'in', 
+                    format: 'a4', 
+                    orientation: 'portrait' 
+                }
             };
-            html2pdf().set(opt).from(element).save().then(() => {
-                header.style.display = headerDisplay;
-                footer.style.display = footerDisplay;
-                navMenu.style.display = navDisplay;
-            });
+
+            setTimeout(() => {
+                html2pdf().set(opt).from(element).save().then(() => {
+                    header.style.display = headerDisplay;
+                    footer.style.display = footerDisplay;
+                    navMenu.style.display = navDisplay;
+                });
+            }, 100);
         }
     </script>
 </body>
